@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Intrinsic Convergence</title>
+  <link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+
+<nav>
+  <a href="index.html">Overview</a>
+  <a href="portfolio.html">Portfolio</a>
+  <a href="performance.html">Performance</a>
+  <a href="risk.html">Risk</a>
+  <a href="valuation.html">Valuation</a>
+  <a href="sensitivity.html">Sensitivity</a>
+  <a href="methodology.html">Methodology</a>
+  <a href="convergence.html">Convergence</a>
+</nav>
+
+<h1>Intrinsic Valuation Convergence</h1>
+
+<pre id="report">Loading…</pre>
+
+<script>
+fetch("audit/intrinsic_convergence_report.json")
+  .then(r => r.json())
+  .then(d => {
+    document.getElementById("report").textContent =
+`Status: ${d.status}
+Timestamp (UTC): ${d.timestamp_utc}
+
+Stocks Indexed: ${d.stocks_indexed}
+Intrinsic Values Computed: ${d.intrinsic_computed}
+Coverage: ${d.coverage_percent}%`;
+  });
+</script>
+
+</body>
+</html>

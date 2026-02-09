@@ -2,11 +2,14 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<base href="/cougar-fund-dashboard/">
 <title>Market Dashboard</title>
-<link rel="stylesheet" href="./assets/styles.css">
+<link rel="stylesheet" href="assets/styles.css">
 </head>
 <body>
+
 <nav>Market Dashboard</nav>
+
 <main>
 <h1>Market Overview</h1>
 
@@ -15,7 +18,7 @@
 <li>Fed Funds: <span id="fedfunds">—</span></li>
 <li>10Y Treasury: <span id="t10y">—</span></li>
 <li>2Y Treasury: <span id="t2y">—</span></li>
-<li>Yield Curve (10Y–2Y): <span id="curve">—</span></li>
+<li>Yield Curve: <span id="curve">—</span></li>
 </ul>
 
 <h2>Inflation & Labor</h2>
@@ -28,9 +31,8 @@
 <ul>
 <li>S&P 500: <span id="sp500">—</span></li>
 </ul>
-<div id="proof" style="background:#eef;padding:10px;margin:20px 0;font-weight:600">DATA PROOF:<br></div></main>
+</main>
 
-<script src="./market.js?v=@(Get-Date -Format 'yyyyMMddHHmmss')"></script>
+<script src="market.js?v=ABS"></script>
 </body>
 </html>
-

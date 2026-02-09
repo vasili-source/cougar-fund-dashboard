@@ -16,3 +16,5 @@ nav a {
   text-decoration: none;
   color: #0066cc;
 }
+#results li { cursor:pointer; padding:6px; }
+#results li.active { background:#e6eefc; }

@@ -1,22 +1,36 @@
 {
-  "timestamp_utc": "2026-02-09T09:45:35Z",
+  "timestamp_utc": "2026-02-09T10:02:20Z",
   "status": "ALL_GREEN_FROZEN",
+  "pages": [
+    "index.html",
+    "portfolio.html",
+    "performance.html",
+    "risk.html",
+    "valuation.html",
+    "sensitivity.html",
+    "methodology.html"
+  ],
   "guarantees": [
-    "All pages mutually reachable",
-    "No broken links or missing assets",
-    "All data loaded from static local JSON",
-    "No backend or runtime execution",
-    "Search is client-side only",
-    "Intrinsic valuation computed offline",
-    "Incremental batch processing verified",
-    "Safe for student interaction",
-    "Academically defensible models only"
+    "All pages mutually reachable via global navigation",
+    "Static-only UI; no backend execution",
+    "All data loaded from local JSON",
+    "SEC universe searchable with ranked autocomplete",
+    "Intrinsic valuation computed offline in batches",
+    "Sensitivity analysis via static sliders",
+    "Comparables provided (PE, EV/EBITDA)",
+    "Portfolio intrinsic synthesis available",
+    "Methodology documented for faculty review",
+    "Audits green; no missing files or dead links",
+    "Safe for student interaction"
   ],
   "artifacts": [
     "audit/site_audit.json",
     "audit/graph_audit.json",
+    "audit/intrinsic_progress.json",
+    "audit/FINAL_AUDIT_FREEZE.json",
     "data/stocks_index.json",
     "data/intrinsic/",
-    "valuation.html"
+    "data/comparables.json",
+    "data/portfolio_gap.json"
   ]
 }

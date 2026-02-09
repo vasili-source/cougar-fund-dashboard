@@ -23,8 +23,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
     stocks
       .filter(s =>
-        s.ticker.toLowerCase().includes(q) ||
-        s.title.toLowerCase().includes(q)
+        (s.ticker && s.ticker.toLowerCase().includes(q)) ||
+        (s.title && s.title.toLowerCase().includes(q))
       )
       .slice(0, 10)
       .forEach(s => {

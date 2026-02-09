@@ -1,12 +1,4 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="UTF-8">
-  <title>Valuation</title>
-  <link rel="stylesheet" href="assets/styles.css">
-</head>
 <body>
-
 <nav>
   <a href="index.html">Overview</a>
   <a href="portfolio.html">Portfolio</a>
@@ -15,106 +7,21 @@
   <a href="valuation.html">Valuation</a>
   <a href="sensitivity.html">Sensitivity</a>
   <a href="methodology.html">Methodology</a>
+  <a href="convergence.html">Progress</a>
 </nav>
 
-<h1>Intrinsic Value (DCF)</h1>
+<main>
+  <h1>Stock Valuation</h1>
+  <p>
+    Search any publicly traded company and see its estimated intrinsic value
+    based on public SEC filings. This is for learning — not investment advice.
+  </p>
 
-<input id="search" placeholder="Search stock…" autocomplete="off" />
-<ul id="results"></ul>
+  <input id="search" placeholder="Start typing a stock name or ticker…" />
+  <ul id="results"></ul>
 
-<pre id="output"></pre>
+  <pre id="output">Select a company to view valuation.</pre>
+</main>
 
-<script>
-let stocks = [];
-let activeIndex = -1;
-
-fetch("data/stocks_index.json")
-  .then(r => r.json())
-  .then(d => stocks = d);
-
-const search = document.getElementById("search");
-const results = document.getElementById("results");
-const output = document.getElementById("output");
-
-function rank(s, q) {
-  const t = s.ticker.toLowerCase();
-  const n = s.name.toLowerCase();
-  if (t === q) return 0;
-  if (t.startsWith(q)) return 1;
-  if (n.startsWith(q)) return 2;
-  if (t.includes(q)) return 3;
-  if (n.includes(q)) return 4;
-  return 5;
-}
-
-function render(list) {
-  results.innerHTML = "";
-  list.forEach((s, i) => {
-    const li = document.createElement("li");
-    li.textContent = `${s.ticker} — ${s.name}`;
-    if (i === activeIndex) li.classList.add("active");
-    li.onclick = () => loadValuation(s.ticker);
-    results.appendChild(li);
-  });
-}
-
-search.addEventListener("input", () => {
-  const q = search.value.toLowerCase().trim();
-  activeIndex = -1;
-  if (!q) { results.innerHTML = ""; return; }
-
-  const ranked = stocks
-    .map(s => ({...s, _r: rank(s, q)}))
-    .filter(s => s._r < 5)
-    .sort((a,b) => a._r - b._r)
-    .slice(0, 20);
-
-  render(ranked);
-});
-
-search.addEventListener("keydown", (e) => {
-  const items = results.querySelectorAll("li");
-  if (!items.length) return;
-
-  if (e.key === "ArrowDown") {
-    activeIndex = (activeIndex + 1) % items.length;
-    render(Array.from(items).map((li,i)=>({
-      ticker: li.textContent.split(" — ")[0],
-      name: li.textContent.split(" — ")[1],
-      _r: i
-    })));
-    e.preventDefault();
-  }
-
-  if (e.key === "ArrowUp") {
-    activeIndex = (activeIndex - 1 + items.length) % items.length;
-    render(Array.from(items).map((li,i)=>({
-      ticker: li.textContent.split(" — ")[0],
-      name: li.textContent.split(" — ")[1],
-      _r: i
-    })));
-    e.preventDefault();
-  }
-
-  if (e.key === "Enter" && activeIndex >= 0) {
-    const t = items[activeIndex].textContent.split(" — ")[0];
-    loadValuation(t);
-  }
-});
-
-function loadValuation(ticker) {
-  fetch("data/intrinsic/" + ticker + ".json")
-    .then(r => r.json())
-    .then(v => {
-      output.textContent =
-        `Ticker: ${v.ticker}\nIntrinsic Value: $${Number(v.value).toFixed(2)}`;
-    })
-    .catch(() => {
-      output.textContent = "Intrinsic value not yet generated.";
-    });
-}
-</script>
-
+<!-- KEEP YOUR EXISTING SCRIPT BELOW -->
 </body>
-</html>
-

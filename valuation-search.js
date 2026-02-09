@@ -12,7 +12,7 @@ document.addEventListener("DOMContentLoaded", () => {
     return;
   }
 
-  fetch("data/stocks_index.json")
+  fetch("./data/stocks_index.json")
     .then(r => r.json())
     .then(d => {
       stocks = d;

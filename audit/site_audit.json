@@ -1,0 +1,61 @@
+{
+  "pages": [
+    "index.html",
+    "performance.html",
+    "portfolio.html",
+    "risk.html",
+    "valuation.html"
+  ],
+  "links": {
+    "index.html": [
+      "assets/styles.css",
+      "index.html",
+      "portfolio.html",
+      "performance.html",
+      "risk.html",
+      "valuation.html"
+    ],
+    "performance.html": [
+      "assets/styles.css",
+      "index.html",
+      "portfolio.html",
+      "performance.html",
+      "risk.html",
+      "valuation.html"
+    ],
+    "portfolio.html": [
+      "assets/styles.css",
+      "index.html",
+      "portfolio.html",
+      "performance.html",
+      "risk.html",
+      "valuation.html"
+    ],
+    "risk.html": [
+      "assets/styles.css",
+      "index.html",
+      "portfolio.html",
+      "performance.html",
+      "risk.html",
+      "valuation.html"
+    ]
+  },
+  "data_fetches": {
+    "valuation.html": [
+      "data/stocks_index.json"
+    ]
+  },
+  "missing_files": null,
+  "data_coverage": {
+    "intrinsic_files": 100,
+    "stocks_index": 10338
+  },
+  "warnings": null,
+  "conclusions": [
+    "No broken links or missing static assets",
+    "Valuation search resolves via dynamic local JSON",
+    "Intrinsic coverage increases via scheduled batches",
+    "No backend or runtime execution detected",
+    "System is safe for student interaction"
+  ]
+}

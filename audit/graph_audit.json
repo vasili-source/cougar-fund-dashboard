@@ -1,0 +1,54 @@
+{
+  "pages": [
+    "index.html",
+    "performance.html",
+    "portfolio.html",
+    "risk.html",
+    "valuation.html"
+  ],
+  "adjacency": {
+    "index.html": [
+      "assets/styles.css",
+      "index.html",
+      "portfolio.html",
+      "performance.html",
+      "risk.html",
+      "valuation.html"
+    ],
+    "performance.html": [
+      "assets/styles.css",
+      "index.html",
+      "portfolio.html",
+      "performance.html",
+      "risk.html",
+      "valuation.html"
+    ],
+    "portfolio.html": [
+      "assets/styles.css",
+      "index.html",
+      "portfolio.html",
+      "performance.html",
+      "risk.html",
+      "valuation.html"
+    ],
+    "risk.html": [
+      "assets/styles.css",
+      "index.html",
+      "portfolio.html",
+      "performance.html",
+      "risk.html",
+      "valuation.html"
+    ]
+  },
+  "unreachable_from": {
+    "valuation.html": [
+      "index.html",
+      "performance.html",
+      "portfolio.html",
+      "risk.html"
+    ]
+  },
+  "conclusions": [
+    "Some pages are not reachable from others"
+  ]
+}

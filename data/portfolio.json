@@ -1,0 +1,8 @@
+﻿{
+  "fund_name": "Portfolio Overview",
+  "assets": [
+    { "name": "Equities", "weight": 60 },
+    { "name": "Fixed Income", "weight": 25 },
+    { "name": "Cash", "weight": 15 }
+  ]
+}

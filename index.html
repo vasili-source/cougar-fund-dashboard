@@ -1,12 +1,5 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="UTF-8">
-  <title>Dashboard Overview</title>
-  <link rel="stylesheet" href="assets/styles.css">
-</head>
 <body>
-  <nav>
+<nav>
   <a href="index.html">Overview</a>
   <a href="portfolio.html">Portfolio</a>
   <a href="performance.html">Performance</a>
@@ -14,9 +7,20 @@
   <a href="valuation.html">Valuation</a>
   <a href="sensitivity.html">Sensitivity</a>
   <a href="methodology.html">Methodology</a>
+  <a href="convergence.html">Progress</a>
 </nav>
-  <h1>Dashboard Overview</h1>
-  <div class="card">Static financial dashboard. Read-only. Generated automatically.</div>
-</body>
-</html>
 
+<main>
+  <h1>Search Any Stock</h1>
+  <p>
+    Type a company name or ticker to see intrinsic value based on SEC filings.
+  </p>
+
+  <input id="search" placeholder="Search AAPL, Apple, MSFT…" autocomplete="off" />
+  <ul id="results"></ul>
+
+  <pre id="output">Start typing to view valuation.</pre>
+</main>
+
+<script src="valuation-search.js"></script>
+</body>

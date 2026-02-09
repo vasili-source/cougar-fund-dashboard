@@ -12,5 +12,7 @@ setTimeout(() => {
   const b = parseFloat(document.getElementById('t2y').textContent);
   if (!isNaN(a) && !isNaN(b)) {
     document.getElementById('curve').textContent = (a - b).toFixed(2);
+  } else {
+    document.getElementById('curve').textContent = 'N/A';
   }
-}, 500);
+}, 300);

@@ -3,17 +3,15 @@
 <head>
   <meta charset="UTF-8">
   <title>Stock Valuation</title>
-  <link rel="stylesheet" href="./assets/styles.css">
+  <link rel="stylesheet" href="/cougar-fund-dashboard/assets/styles.css">
 </head>
 <body>
 
-<nav>
-  <strong>Stock Valuation</strong>
-</nav>
+<nav>Stock Valuation</nav>
 
 <main>
   <h1>Search a Stock</h1>
-  <p>Type a ticker or company name to see intrinsic value.</p>
+  <p id="status">Loading stock list…</p>
 
   <input id="search" placeholder="AAPL, Apple, MSFT…" autocomplete="off" />
   <ul id="results"></ul>
@@ -21,6 +19,6 @@
   <pre id="output">Start typing to view valuation.</pre>
 </main>
 
-<script src="./valuation-search.js"></script>
+<script src="/cougar-fund-dashboard/valuation-search.js"></script>
 </body>
 </html>

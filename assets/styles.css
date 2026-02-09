@@ -1,29 +1,8 @@
-﻿body {
-  font-family: system-ui, sans-serif;
-  margin: 0;
-  background: #f8fafc;
-}
-
-nav {
-  background: #ffffff;
-  padding: 14px 20px;
-  border-bottom: 1px solid #e5e7eb;
-  font-weight: 600;
-}
-
-main {
-  max-width: 900px;
-  margin: 40px auto;
-  padding: 0 20px;
-}
-
+﻿body { font-family: system-ui; margin: 0; background: #f8fafc; }
+nav { background: #fff; padding: 14px 20px; border-bottom: 1px solid #e5e7eb; font-weight: 600; }
+main { max-width: 900px; margin: 40px auto; padding: 0 20px; }
 h1 { font-size: 2rem; }
 h2 { margin-top: 32px; }
-
 ul { padding-left: 18px; }
 li { margin: 6px 0; }
-
-a {
-  color: #2563eb;
-  text-decoration: none;
-}
+a { color: #2563eb; text-decoration: none; }

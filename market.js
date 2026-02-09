@@ -18,3 +18,4 @@ setTimeout(()=>{
   document.getElementById('curve').textContent =
     (!isNaN(a)&&!isNaN(b))?(a-b).toFixed(2):'ERR';
 },200);
+

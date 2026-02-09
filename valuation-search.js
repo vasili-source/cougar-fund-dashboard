@@ -11,9 +11,6 @@ document.addEventListener("DOMContentLoaded", () => {
     .then(d => {
       stocks = d;
       status.textContent = "Loaded " + stocks.length + " stocks";
-    })
-    .catch(() => {
-      status.textContent = "FAILED TO LOAD STOCK DATA";
     });
 
   search.addEventListener("input", () => {
@@ -36,14 +33,23 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   function loadValuation(ticker) {
-    fetch("/cougar-fund-dashboard/data/intrinsic/" + ticker + ".json")
-      .then(r => r.json())
-      .then(v => {
-        output.textContent =
-          "Ticker: " + v.ticker + "\nIntrinsic Value: $" + Number(v.value).toFixed(2);
-      })
-      .catch(() => {
-        output.textContent = "Intrinsic value still generating.";
+    const path = "/cougar-fund-dashboard/data/intrinsic/" + ticker + ".json";
+
+    fetch(path, { method: "HEAD" })
+      .then(r => {
+        if (!r.ok) {
+          output.textContent =
+            "Intrinsic value is still being generated for this stock.";
+          return;
+        }
+
+        fetch(path)
+          .then(r => r.json())
+          .then(v => {
+            output.textContent =
+              "Ticker: " + v.ticker +
+              "\\nIntrinsic Value: $" + Number(v.value).toFixed(2);
+          });
       });
   }
 });

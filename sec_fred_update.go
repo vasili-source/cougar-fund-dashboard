@@ -1,14 +1,12 @@
 package main
 
-import (n\t"os"\n
-	"encoding/json"
-	"io"
-	"net/http"
-	"os"
-	"time"
-)
-
-func fetch(url string, headers map[string]string) []byte {
+import (
+    "encoding/json"
+    "io"
+    "net/http"
+    "os"
+    "time"
+)func fetch(url string, headers map[string]string) []byte {
 	req, _ := http.NewRequest("GET", url, nil)
 	for k, v := range headers {
 		req.Header.Set(k, v)

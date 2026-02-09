@@ -38,11 +38,20 @@
       "performance.html",
       "risk.html",
       "valuation.html"
+    ],
+    "valuation.html": [
+      "assets/styles.css",
+      "index.html",
+      "portfolio.html",
+      "performance.html",
+      "risk.html",
+      "valuation.html"
     ]
   },
   "data_fetches": {
     "valuation.html": [
-      "data/stocks_index.json"
+      "data/stocks_index.json",
+      "data/intrinsic/"
     ]
   },
   "missing_files": null,
@@ -53,9 +62,10 @@
   "warnings": null,
   "conclusions": [
     "No broken links or missing static assets",
-    "Valuation search resolves via dynamic local JSON",
-    "Intrinsic coverage increases via scheduled batches",
-    "No backend or runtime execution detected",
+    "All pages parsed uniformly",
+    "Navigation graph complete",
+    "Valuation search is client-side only",
+    "No backend dependencies detected",
     "System is safe for student interaction"
   ]
 }

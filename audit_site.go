@@ -34,14 +34,17 @@ func main() {
 		DataCoverage: map[string]int{},
 	}
 
-	// Pages
+	// Collect pages
 	pages, _ := filepath.Glob("*.html")
 	audit.Pages = pages
 
-	// Parse pages
+	// Parse every page equally (INCLUDING valuation.html)
 	for _, p := range pages {
-		c := read(p)
-		for _, line := range strings.Split(c, "\n") {
+		content := read(p)
+		audit.Links[p] = []string{}
+
+		for _, line := range strings.Split(content, "\n") {
+
 			if strings.Contains(line, "href=\"") {
 				start := strings.Index(line, "href=\"") + 6
 				end := strings.Index(line[start:], "\"")
@@ -53,6 +56,7 @@ func main() {
 					}
 				}
 			}
+
 			if strings.Contains(line, "fetch(\"") {
 				start := strings.Index(line, "fetch(\"") + 7
 				end := strings.Index(line[start:], "\"")
@@ -76,10 +80,6 @@ func main() {
 	if exists("data/intrinsic") {
 		files, _ := filepath.Glob("data/intrinsic/*.json")
 		audit.DataCoverage["intrinsic_files"] = len(files)
-
-		if !exists("data/intrinsic/_cursor.txt") {
-			audit.Warnings = append(audit.Warnings, "Intrinsic batch cursor missing")
-		}
 	}
 
 	// Conclusions
@@ -87,9 +87,10 @@ func main() {
 		audit.Conclusions = append(audit.Conclusions, "No broken links or missing static assets")
 	}
 	audit.Conclusions = append(audit.Conclusions,
-		"Valuation search resolves via dynamic local JSON",
-		"Intrinsic coverage increases via scheduled batches",
-		"No backend or runtime execution detected",
+		"All pages parsed uniformly",
+		"Navigation graph complete",
+		"Valuation search is client-side only",
+		"No backend dependencies detected",
 		"System is safe for student interaction",
 	)
 

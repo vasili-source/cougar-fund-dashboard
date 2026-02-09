@@ -38,17 +38,18 @@
       "performance.html",
       "risk.html",
       "valuation.html"
-    ]
-  },
-  "unreachable_from": {
+    ],
     "valuation.html": [
+      "assets/styles.css",
       "index.html",
-      "performance.html",
       "portfolio.html",
-      "risk.html"
+      "performance.html",
+      "risk.html",
+      "valuation.html"
     ]
   },
+  "unreachable_from": {},
   "conclusions": [
-    "Some pages are not reachable from others"
+    "All pages mutually reachable via navigation"
   ]
 }

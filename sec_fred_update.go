@@ -6,7 +6,9 @@ import (
     "net/http"
     "os"
     "time"
-)func fetch(url string, headers map[string]string) []byte {
+)
+
+func fetch(url string, headers map[string]string) []byte {
 	req, _ := http.NewRequest("GET", url, nil)
 	for k, v := range headers {
 		req.Header.Set(k, v)

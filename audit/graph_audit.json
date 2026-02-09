@@ -1,9 +1,11 @@
 {
   "pages": [
     "index.html",
+    "methodology.html",
     "performance.html",
     "portfolio.html",
     "risk.html",
+    "sensitivity.html",
     "valuation.html"
   ],
   "adjacency": {
@@ -13,7 +15,19 @@
       "portfolio.html",
       "performance.html",
       "risk.html",
-      "valuation.html"
+      "valuation.html",
+      "sensitivity.html",
+      "methodology.html"
+    ],
+    "methodology.html": [
+      "assets/styles.css",
+      "index.html",
+      "portfolio.html",
+      "performance.html",
+      "risk.html",
+      "valuation.html",
+      "sensitivity.html",
+      "methodology.html"
     ],
     "performance.html": [
       "assets/styles.css",
@@ -21,7 +35,9 @@
       "portfolio.html",
       "performance.html",
       "risk.html",
-      "valuation.html"
+      "valuation.html",
+      "sensitivity.html",
+      "methodology.html"
     ],
     "portfolio.html": [
       "assets/styles.css",
@@ -29,7 +45,9 @@
       "portfolio.html",
       "performance.html",
       "risk.html",
-      "valuation.html"
+      "valuation.html",
+      "sensitivity.html",
+      "methodology.html"
     ],
     "risk.html": [
       "assets/styles.css",
@@ -37,7 +55,19 @@
       "portfolio.html",
       "performance.html",
       "risk.html",
-      "valuation.html"
+      "valuation.html",
+      "sensitivity.html",
+      "methodology.html"
+    ],
+    "sensitivity.html": [
+      "assets/styles.css",
+      "index.html",
+      "portfolio.html",
+      "performance.html",
+      "risk.html",
+      "valuation.html",
+      "sensitivity.html",
+      "methodology.html"
     ],
     "valuation.html": [
       "assets/styles.css",
@@ -45,7 +75,9 @@
       "portfolio.html",
       "performance.html",
       "risk.html",
-      "valuation.html"
+      "valuation.html",
+      "sensitivity.html",
+      "methodology.html"
     ]
   },
   "unreachable_from": {},

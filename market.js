@@ -1,4 +1,4 @@
-﻿fetch('./data/health.json', { cache: 'no-store' })
+﻿fetch('/cougar-fund-dashboard/data/health.json', { cache: 'no-store' })
   .then(r => r.json())
   .then(d => {
     document.body.insertAdjacentHTML(

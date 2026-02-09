@@ -1,6 +1,6 @@
 package main
 
-import (
+import (\n\t"os"\n
 	"encoding/json"
 	"io"
 	"net/http"
@@ -34,7 +34,7 @@ func main() {
 	os.WriteFile("data/sec_company_facts.json", secData, 0644)
 
 	// --- FRED: Fed Funds Rate ---
-	fredURL := "https://api.stlouisfed.org/fred/series/observations?series_id=FEDFUNDS&api_key=YOUR_REAL_FRED_KEY&file_type=json"
+	fredURL := "https://api.stlouisfed.org/fred/series/observations?series_id=FEDFUNDS&api_key="+os.Getenv("FRED_API_KEY")+"&file_type=json"
 	fredData := fetch(fredURL, nil)
 	os.WriteFile("data/fed_funds.json", fredData, 0644)
 

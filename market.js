@@ -1,8 +1,16 @@
 ﻿function load(id){
   fetch('./data/' + id + '.json', { cache: 'no-store' })
     .then(r => r.json())
-    .then(d => document.getElementById(id).textContent = d.value)
-    .catch(() => document.getElementById(id).textContent = 'N/A');
+    .then(d => {
+      document.getElementById(id).textContent = d.value;
+      document.getElementById('proof').innerHTML +=
+        id + ': ' + d.value + '<br>';
+    })
+    .catch(() => {
+      document.getElementById(id).textContent = 'N/A';
+      document.getElementById('proof').innerHTML +=
+        id + ': FAILED<br>';
+    });
 }
 
 ['fedfunds','t10y','t2y','cpi','unrate','sp500'].forEach(load);

@@ -1,22 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Stock Valuation</title>
+  <link rel="stylesheet" href="assets/styles.css">
+</head>
 <body>
+
 <nav>
-  <a href="index.html">Overview</a>
-  <a href="portfolio.html">Portfolio</a>
-  <a href="performance.html">Performance</a>
-  <a href="risk.html">Risk</a>
-  <a href="valuation.html">Valuation</a>
-  <a href="sensitivity.html">Sensitivity</a>
-  <a href="methodology.html">Methodology</a>
-  <a href="convergence.html">Progress</a>
+  <strong>Stock Valuation</strong>
 </nav>
 
 <main>
-  <h1>Search Any Stock</h1>
+  <h1>Search a Stock</h1>
   <p>
-    Type a company name or ticker to see intrinsic value based on SEC filings.
+    Type a ticker or company name to see intrinsic value based on SEC filings.
   </p>
 
-  <input id="search" placeholder="Search AAPL, Apple, MSFT…" autocomplete="off" />
+  <input id="search" placeholder="AAPL, Apple, MSFT…" autocomplete="off" />
   <ul id="results"></ul>
 
   <pre id="output">Start typing to view valuation.</pre>
@@ -24,3 +25,4 @@
 
 <script src="valuation-search.js"></script>
 </body>
+</html>
